@@ -1,4 +1,4 @@
-#Configure your package for your SharePoint environment
+# Configure your package for your SharePoint environment
 Before you build your package for the first time, you need to configure it for the SharePoint environments you want to support.
 
 There are two ways you can configure and deploy your package:
