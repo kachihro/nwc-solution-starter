@@ -23,6 +23,10 @@ For more help getting started building and debugging SharePoint packages, see [M
 ## Build your package
 Once you have configured your package and created a developer certificate, you can build the package.
 
+**Remember to update the version**
+
+If you've made changes to files in the package, update the version number in **package-solution.json** file in the **/config** folder to avoid conflicts when you install your new version.
+
 _Note:_ If you are supporting SharePoint on-premesis, you must use Node v6. Use NODIST (or 'n' if developing on a Mac) to switch Node versions. Check [nodejs.org](https://nodejs.org/dist/latest-v6.x/) for the latest v6 version.
 
 To build your package:
