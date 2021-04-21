@@ -1,10 +1,11 @@
+#Configure your package for your SharePoint environment
 Before you build your package for the first time, you need to configure it for the SharePoint environments you want to support.
 
 There are two ways you can configure and deploy your package:
 
-  - [Support both SharePoint Online and SharePoint on-premises](https://github.com/nintexplatform/nwc-solution-starter/blob/main/docs/build.md#SharePoint-On-Premises-and-SharePoint-Online)
+  - [Support both SharePoint Online and SharePoint on-premises](https://github.com/nintexplatform/nwc-solution-starter/blob/main/docs/configure.md#SharePoint-On-Premises-and-SharePoint-Online)
     - This requires using an older version of the SharePoint Framework to support SharePoint 2016  
-  - [Support SharePoint Online only](https://github.com/nintexplatform/nwc-solution-starter/blob/main/docs/build.md#sharepoint-online-only)
+  - [Support SharePoint Online only](https://github.com/nintexplatform/nwc-solution-starter/blob/main/docs/configure.md#sharepoint-online-only)
     - If you are only using SharePoint online, you can configure the package to bundle all required files into one upload to make your installation process simpler.
 
 
