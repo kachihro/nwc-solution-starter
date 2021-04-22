@@ -8,6 +8,7 @@ Designed using the Nintex Workflow Cloud public developer API, this Solution Sta
 This documentation will guide you through building and installing the Nintex Solution Starter in SharePoint Online, or SharePoint on-premises, as well as making some simple customization.
 
 To get started, you can either create your own build of the packages or install one of the released basic solution packages, and add the web part to a SharePoint page:
+1. [Configure the app for your SharePoint environment](/docs/configure.md).
 1. [Build the app](/docs/build.md).
 1. [Install the app in your SharePoint environment](/docs/install.md).
 1. [Add the web part to a page](/docs/addToPage.md).
