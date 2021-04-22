@@ -1,6 +1,6 @@
 # Install the Nintex solution starter in your environment
 To install the Nintex Solution Starter in your SharePoint on-premises environment, add the app to your SharePoint App Catalog and upload the CDN files. 
-If you are just installing the Solution Starter in a SharePoint Online environment you do not need to complete step 3.
+If you are installing a Solution Starter package [configured](./configure.md) only for a SharePoint Online environment you do not need to complete step 3.
 
 _Note:_ To complete the installation, you must have SharePoint Admin Centre privileges.
 
