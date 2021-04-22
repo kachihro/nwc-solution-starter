@@ -4,6 +4,8 @@ To use the web part to retrieve a user's tasks and forms, you need to:
 - Retrieve your Nintex ClientID.
 - Add the web part to the page where you want to display a user's tasks and forms.
 
+_Note:_ Your SharePoint page must be a [modern](https://support.microsoft.com/en-us/office/create-and-use-modern-pages-on-a-sharepoint-site-b3d46deb-27a6-4b1e-87b8-df851e503dec) page to be able to use the Nintex web part.
+
 ## Retrieve your Nintex ClientID
 Your Nintex ClientID is used to authenticate your SharePoint environment with Nintex Workflow Cloud after the web part is added to your page, and allows your users to access the web part with their Nintex Workflow Cloud credentials. 
 
