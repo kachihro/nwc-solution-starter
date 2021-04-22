@@ -1,17 +1,19 @@
 # Add the web part to your page
-- Retrieve your Nintex ClientID
-- Add the web part to the page where you want to display a user's tasks and forms.
-_Note:_ If the Nintex Solution Starter is not deployed to all sites, you will first need to add it to your site.
 
+To use the web part to retrieve a user's tasks and forms, you need to:
+- Retrieve your Nintex ClientID.
+- Add the web part to the page where you want to display a user's tasks and forms.
 
 ## Retrieve your Nintex ClientID
-Your Nintex ClientID will be used in the configuration of the web part once it is installed. The ClientID is used to authenticate your SharePoint environment with Nintex Workflow Cloud, and enables your users to be able to access the web part with their Nintex Workflow Cloud credentials. If your users do not yet have access to your Nintex Workflow Cloud tenant, you can learn more about how to add them within the [Nintex Workflow Cloud product documentation](https://help.nintex.com/en-US/nwc/Content/Settings/UserManagement.htm).
+Your Nintex ClientID is used to authenticate your SharePoint environment with Nintex Workflow Cloud after the web part is added to your page, and allows your users to access the web part with their Nintex Workflow Cloud credentials. 
+
+If your users do not yet have access to your Nintex Workflow Cloud tenant, see the [Nintex Workflow Cloud product documentation](https://help.nintex.com/en-US/nwc/Content/Settings/UserManagement.htm) for more information on managing users in your tenant.
 
 To retrieve your Nintex ClientID
 1. Complete the **[request form]** with your SharePoint information.
-1. You will recieve an email with your new ClientID.
+1. You will recieve an email with your Nintex ClientID.
 
-Your ClientID can be used in any web part installed in your environment. 
+Your Nintex ClientID can be used in any Nintex web part installed in your SharePoint environment. 
 
 ## Add NWC Tasks and Forms web part to your site
 If your SharePoint Administrator has not deployed the Nintex Solution Starter for all sites, you must add the app to your site individually before you can use it on pages.
