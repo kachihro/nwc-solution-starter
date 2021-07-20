@@ -263,6 +263,24 @@ export default class NwcTasksForms extends React.Component<INwcTasksFormsProps, 
     return apiUrl;
   }
 
+  // determine the list of tasks, dependent on a workflow filter - if any ?
+  private filterTasks = (tasks: INintexTask[]): INintexTask[] => {
+
+    // assess current user if it's a multi-user task
+
+    // check to see if there's a filter for workflows - if not, then just return
+    return tasks;
+
+  }
+
+  // determine the list of forms, dependent on a workflow filter - if any ?
+  private filterForms = (forms: INintexForm[]): INintexForm[] => {
+
+    // check to see if there's a filter for workflows - if not, then just return
+    return forms;
+
+  }
+
   // setup the auth connection object
   private configureClient = async () => {
 
@@ -323,7 +341,7 @@ export default class NwcTasksForms extends React.Component<INwcTasksFormsProps, 
           if (json.tasks) {
             this.state = {
               ...this.state,
-              nwcTasks: json.tasks,
+              nwcTasks: this.filterTasks(json.tasks),
               tasksLoading: false
             };
             this.forceUpdate();
@@ -375,7 +393,7 @@ export default class NwcTasksForms extends React.Component<INwcTasksFormsProps, 
           if (json.forms) {
             this.state = {
               ...this.state,
-              nwcForms: json.forms,
+              nwcForms: this.filterForms(json.forms),
               formsLoading: false
             };
             this.forceUpdate();

@@ -14,6 +14,7 @@ import { INwcTasksFormsProps } from './components/INwcTasksFormsProps';
 export interface INwcTasksFormsWebPartProps {
   tenantName: string;
   clientId: string;
+  filterWorkflows: string;
 }
 
 export default class NwcTasksFormsWebPart extends BaseClientSideWebPart<INwcTasksFormsWebPartProps> {
@@ -25,6 +26,7 @@ export default class NwcTasksFormsWebPart extends BaseClientSideWebPart<INwcTask
         needsConfiguration: this._needsConfiguration(),
         tenantName: this.properties.tenantName,
         clientId: this.properties.clientId,
+        filterWorkflows: this.properties.filterWorkflows,
         errorHandler: this._onError
       }
     );
@@ -56,6 +58,16 @@ export default class NwcTasksFormsWebPart extends BaseClientSideWebPart<INwcTask
                 }),
                 PropertyPaneTextField('clientId', {
                   label: strings.ClientIdFieldLabel
+                })
+              ]
+            },
+            {
+              groupName: strings.FilterGroupName,
+              groupFields: [
+                PropertyPaneTextField('filterWorkflows', {
+                  label: strings.WorkflowsToFilterLabel,
+                  multiline: true,
+                  rows: 6
                 })
               ]
             }
