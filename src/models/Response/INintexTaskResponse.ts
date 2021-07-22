@@ -7,6 +7,9 @@ export interface INintexTaskResponse {
     status?: string;
     createdDate?: string;
     dueDate?: string;
+    workflowName?: string;
+    workflowId?: string;
+
     // message?: string;
     // outcomes?: string[];
     // subject?: string;

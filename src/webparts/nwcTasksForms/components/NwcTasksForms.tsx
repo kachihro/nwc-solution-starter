@@ -274,25 +274,48 @@ export default class NwcTasksForms extends React.Component<INwcTasksFormsProps, 
   private filterTasks = (tasks: INintexTaskResponse[]): INintexTask[] => {
 
     //map to display mode for NintexTasks
-    var returnTasks: INintexTask[] = tasks.map(t => {
+    var returnTasks: INintexTask[] = [];
 
+    var workflowFilters = [];
+    if (this.props.filterWorkflows !== '') {
+      workflowFilters = this.props.filterWorkflows.split(/\r?\n/);
+    };
+
+    tasks.map(t => {
       // check to see if there's a filter for workflows - if not, then just return
+      t.taskAssignments.forEach(ta => {
+        var correctUser: boolean = false;
+        var includeFromFilter: boolean = false;
 
+        correctUser = (ta.assignee == this.props.currentUserEmail);
+        debugger;
+        if (workflowFilters.length == 0) {
+          includeFromFilter = true;
+        }
+        else {
+          workflowFilters.forEach(filter => {
+            // matching the filter guid
+            if (filter == t.workflowId) {
+              includeFromFilter = true
+            }
+          });
+        }
 
-      //also check for task assignee - current user
-
-
-      return {
-        id: t.id,
-        name: t.name,
-        description: t.description,
-        status: t.status,
-        created: t.status,
-        dueDate: t.dueDate,
-        // formUrl?: string;
-        // workflow?: string;
-      };
-    })
+        // can now add to the collection to include in UI
+        if (correctUser && includeFromFilter) {
+          returnTasks.push({
+            id: t.id,
+            name: t.name,
+            description: t.description,
+            status: t.status,
+            created: t.createdDate,
+            dueDate: t.dueDate,
+            formUrl: ta.urls.formUrl,
+            workflow: t.workflowName,
+          });
+        };
+      });
+    });
 
     return returnTasks;
 

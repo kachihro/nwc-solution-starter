@@ -5,8 +5,6 @@ export interface INintexTaskResponseAssignment {
     id: string;
     status?: string;
     urls?: INintexUrls;
-    workflowName?: string;
-    workflowId?: string;
 
 
     // workflowInstanceId?: string;

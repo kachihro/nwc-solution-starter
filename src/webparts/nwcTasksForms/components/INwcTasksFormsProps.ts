@@ -3,5 +3,6 @@ export interface INwcTasksFormsProps {
   clientId: string;
   filterWorkflows: string;
   needsConfiguration: boolean;
+  currentUserEmail: string;
   errorHandler: (errorMessage: string) => void;
 }

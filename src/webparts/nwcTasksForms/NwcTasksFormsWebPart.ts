@@ -27,6 +27,7 @@ export default class NwcTasksFormsWebPart extends BaseClientSideWebPart<INwcTask
         tenantName: this.properties.tenantName,
         clientId: this.properties.clientId,
         filterWorkflows: this.properties.filterWorkflows,
+        currentUserEmail: this.context.pageContext.user.email,
         errorHandler: this._onError
       }
     );
