@@ -15,10 +15,14 @@ import {
   SpinnerSize
 } from 'office-ui-fabric-react';
 
-import { INintexTask } from '../../../models/INintexTask';
-import { INintexForm } from '../../../models/INintexForm';
 import createAuth0Client, { Auth0Client, IdToken } from '@auth0/auth0-spa-js';
 import { AppSettings } from '../../../AppSettings';
+
+import { INintexFormReponse } from '../../../models/Response/INintexFormReponse';
+import { INintexTaskResponse } from '../../../models/Response/INintexTaskResponse';
+
+import { INintexForm } from '../../../models/Display/INintexForm';
+import { INintexTask } from '../../../models/Display/INintexTask';
 
 export default class NwcTasksForms extends React.Component<INwcTasksFormsProps, INwcTasksFormsState> {
 
@@ -133,7 +137,7 @@ export default class NwcTasksForms extends React.Component<INwcTasksFormsProps, 
       {
         key: 'column7',
         name: 'Task form',
-        fieldName: 'urls',
+        fieldName: 'formUrl',
         minWidth: 150,
         maxWidth: 200,
         isRowHeader: true,
@@ -142,9 +146,12 @@ export default class NwcTasksForms extends React.Component<INwcTasksFormsProps, 
         isSortedDescending: false,
         data: 'string',
         onRender: (item) => {
-          if ((item.urls) && (item.urls.formUrl)) {
-            return <a target='_blank' href={item.urls.formUrl}>View Task Form</a>;
+          if ((item.formUrl)) {
+            return <a target='_blank' href={item.formUrl}>View Task Form</a>;
           }
+          // if ((item.urls) && (item.urls.formUrl)) {
+          //   return <a target='_blank' href={item.urls.formUrl}>View Task Form</a>;
+          // }
         },
         onColumnClick: this._onTasksColumnClick
       }
@@ -264,20 +271,52 @@ export default class NwcTasksForms extends React.Component<INwcTasksFormsProps, 
   }
 
   // determine the list of tasks, dependent on a workflow filter - if any ?
-  private filterTasks = (tasks: INintexTask[]): INintexTask[] => {
+  private filterTasks = (tasks: INintexTaskResponse[]): INintexTask[] => {
 
-    // assess current user if it's a multi-user task
+    //map to display mode for NintexTasks
+    var returnTasks: INintexTask[] = tasks.map(t => {
 
-    // check to see if there's a filter for workflows - if not, then just return
-    return tasks;
+      // check to see if there's a filter for workflows - if not, then just return
+
+
+      //also check for task assignee - current user
+
+
+      return {
+        id: t.id,
+        name: t.name,
+        description: t.description,
+        status: t.status,
+        created: t.status,
+        dueDate: t.dueDate,
+        // formUrl?: string;
+        // workflow?: string;
+      };
+    })
+
+    return returnTasks;
+
 
   }
 
-  // determine the list of forms, dependent on a workflow filter - if any ?
-  private filterForms = (forms: INintexForm[]): INintexForm[] => {
+  // determine the list of forms, dependent on a workflow filter - if any
+  // [[ QUESTION: filter for workflow ?? ]]
+  private filterForms = (forms: INintexFormReponse[]): INintexForm[] => {
 
-    // check to see if there's a filter for workflows - if not, then just return
-    return forms;
+    // map to display mode for NintexForms
+    var returnForms: INintexForm[] = forms.map(f => {
+      return {
+        id: f.id,
+        name: f.name,
+        description: f.description,
+        lastModified: f.lastModified,
+        urls: f.urls,
+        favourite: f.favourite,
+        workflow: f.workflow,
+      };
+    })
+
+    return returnForms;
 
   }
 
@@ -319,7 +358,7 @@ export default class NwcTasksForms extends React.Component<INwcTasksFormsProps, 
       const idToken: IdToken = await this.auth0.getIdTokenClaims();
 
       // https://developer.nintex.com/reference#get-tasks
-      let tasksUrl: string = this.getGeoPrefixUrl(idToken) + '/workflows/v1/tasks';
+      let tasksUrl: string = this.getGeoPrefixUrl(idToken) + '/workflows/v2/tasks';
       tasksUrl += '?status=active';
 
       fetch(tasksUrl, {
@@ -600,7 +639,7 @@ function _sampleTasks(): INintexTask[] {
       'id': '09858968-3eae-43a7-8a4f-060958a693a5',
       'name': 'Claim request',
       'description': 'Claim request for electronics',
-      'workflow': 'aaaaa',
+      'workflow': 'ccccc',
       'status': 'XYZ'
     },
     {
@@ -614,21 +653,21 @@ function _sampleTasks(): INintexTask[] {
       'id': 'e222e319-500b-41c5-8ffd-8801f187c256',
       'name': 'Auth test lito',
       'description': 'What about this one',
-      'workflow': 'bbbbbb',
+      'workflow': 'ccccc',
       'status': 'LMNOP'
     },
     {
       'id': 'e222e319-500b-41c5-8ffd-8801f187c256',
       'name': 'Extra form -test lito',
       'description': 'Extra this one',
-      'workflow': 'bbbbbb',
+      'workflow': 'ccccc',
       'status': 'LMNOP'
     },
     {
       'id': 'e222e319-500b-41c5-8ffd-8801f187c256',
       'name': 'Form3 -test lito',
       'description': 'Form3 about this one',
-      'workflow': 'ddddd',
+      'workflow': 'ccccc',
       'status': 'QWERT'
     }
   ];

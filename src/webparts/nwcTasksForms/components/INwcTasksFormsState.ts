@@ -1,6 +1,6 @@
 import { IColumn } from 'office-ui-fabric-react';
-import { INintexForm } from '../../../models/INintexForm';
-import { INintexTask } from '../../../models/INintexTask';
+import { INintexForm } from '../../../models/Display/INintexForm';
+import { INintexTask } from '../../../models/Display/INintexTask';
 
 export interface INwcTasksFormsState {
   nwcTasks: INintexTask[];
