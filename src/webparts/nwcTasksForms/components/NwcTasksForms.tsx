@@ -273,30 +273,29 @@ export default class NwcTasksForms extends React.Component<INwcTasksFormsProps, 
   // determine the list of tasks, dependent on a workflow filter - if any ?
   private filterTasks = (tasks: INintexTaskResponse[]): INintexTask[] => {
 
-    //map to display mode for NintexTasks
-    var returnTasks: INintexTask[] = [];
+    // map to display mode for NintexTasks
+    const returnTasks: INintexTask[] = [];
 
-    var workflowFilters = [];
+    let workflowFilters: string[] = [];
     if (this.props.filterWorkflows !== '') {
       workflowFilters = this.props.filterWorkflows.split(/\r?\n/);
-    };
+    }
 
     tasks.map(t => {
       // check to see if there's a filter for workflows - if not, then just return
       t.taskAssignments.forEach(ta => {
-        var correctUser: boolean = false;
-        var includeFromFilter: boolean = false;
+        let correctUser: boolean = false;
+        let includeFromFilter: boolean = false;
 
-        correctUser = (ta.assignee == this.props.currentUserEmail);
-        debugger;
-        if (workflowFilters.length == 0) {
+        correctUser = (ta.assignee === this.props.currentUserEmail);
+
+        if (workflowFilters.length === 0) {
           includeFromFilter = true;
-        }
-        else {
+        } else {
           workflowFilters.forEach(filter => {
             // matching the filter guid
-            if (filter == t.workflowId) {
-              includeFromFilter = true
+            if (filter === t.workflowId) {
+              includeFromFilter = true;
             }
           });
         }
@@ -311,14 +310,13 @@ export default class NwcTasksForms extends React.Component<INwcTasksFormsProps, 
             created: t.createdDate,
             dueDate: t.dueDate,
             formUrl: ta.urls.formUrl,
-            workflow: t.workflowName,
+            workflow: t.workflowName
           });
-        };
+        }
       });
     });
 
     return returnTasks;
-
 
   }
 
@@ -327,7 +325,7 @@ export default class NwcTasksForms extends React.Component<INwcTasksFormsProps, 
   private filterForms = (forms: INintexFormReponse[]): INintexForm[] => {
 
     // map to display mode for NintexForms
-    var returnForms: INintexForm[] = forms.map(f => {
+    const returnForms: INintexForm[] = forms.map(f => {
       return {
         id: f.id,
         name: f.name,
@@ -335,9 +333,9 @@ export default class NwcTasksForms extends React.Component<INwcTasksFormsProps, 
         lastModified: f.lastModified,
         urls: f.urls,
         favourite: f.favourite,
-        workflow: f.workflow,
+        workflow: f.workflow
       };
-    })
+    });
 
     return returnForms;
 

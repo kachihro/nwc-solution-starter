@@ -5,6 +5,6 @@ define([], function () {
     "FilterGroupName": "Filter",
     "TenantNameFieldLabel": "Tenant Name (tenant.workflowcloud.com)",
     "ClientIdFieldLabel": "Client Id as provided by Nintex",
-    "WorkflowsToFilterLabel": "GUIDs for Workflows, comma-separated"
+    "WorkflowsToFilterLabel": "GUIDs for Workflows, one per line"
   }
 });

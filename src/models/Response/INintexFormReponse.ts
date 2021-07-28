@@ -1,5 +1,5 @@
-import { INintexUrls } from "../Additional/INintexUrls";
-import { INintexWorkflow } from "../Additional/INintexWorkflow";
+import { INintexUrls } from '../Additional/INintexUrls';
+import { INintexWorkflow } from '../Additional/INintexWorkflow';
 
 export interface INintexFormReponse {
     id: string;
