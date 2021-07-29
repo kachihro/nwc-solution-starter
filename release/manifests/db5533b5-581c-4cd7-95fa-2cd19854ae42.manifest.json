@@ -1,0 +1,65 @@
+{
+  "id": "db5533b5-581c-4cd7-95fa-2cd19854ae42",
+  "alias": "NwcTasksFormsWebPart",
+  "componentType": "WebPart",
+  "version": "0.0.1",
+  "manifestVersion": 2,
+  "requiresCustomScript": false,
+  "supportedHosts": [
+    "SharePointWebPart",
+    "TeamsTab"
+  ],
+  "preconfiguredEntries": [
+    {
+      "groupId": "5c03119e-3074-46fd-976b-c60198311f70",
+      "group": {
+        "default": "Other"
+      },
+      "title": {
+        "default": "NWC Tasks and Forms"
+      },
+      "description": {
+        "default": "Display Tasks and Forms from Nintex Workflow Cloud"
+      },
+      "officeFabricIconFontName": "ProcessMetaTask",
+      "properties": {
+        "description": "NwcTasksForms"
+      }
+    }
+  ],
+  "loaderConfig": {
+    "internalModuleBaseUrls": [
+      "<!-- PATH TO CDN -->"
+    ],
+    "entryModuleId": "nwc-tasks-forms-web-part",
+    "scriptResources": {
+      "nwc-tasks-forms-web-part": {
+        "type": "path",
+        "path": "nwc-tasks-forms-web-part_3edbebe5368a88407014.js"
+      },
+      "@microsoft/sp-webpart-base": {
+        "type": "component",
+        "id": "974a7777-0990-4136-8fa6-95d80114c2e0",
+        "version": "1.12.1"
+      },
+      "react": {
+        "type": "component",
+        "id": "0d910c1c-13b9-4e1c-9aa4-b008c5e42d7d",
+        "version": "15.4.2"
+      },
+      "NwcTasksFormsWebPartStrings": {
+        "type": "localizedPath",
+        "paths": {
+          "en-AU": "NwcTasksFormsWebPartStrings_en-au_9f989e12cc6daeb4739083f168123c89.js",
+          "en-US": "NwcTasksFormsWebPartStrings_en-us_9f989e12cc6daeb4739083f168123c89.js"
+        },
+        "defaultPath": "NwcTasksFormsWebPartStrings_en-us_9f989e12cc6daeb4739083f168123c89.js"
+      },
+      "react-dom": {
+        "type": "component",
+        "id": "aa0a46ec-1505-43cd-a44a-93f3a5aa460a",
+        "version": "15.4.2"
+      }
+    }
+  }
+}

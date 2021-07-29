@@ -1,13 +1,18 @@
 {
-  "entries": [
-    {
-      "entry": "./lib/webparts/nwcTasksForms/NwcTasksFormsWebPart.js",
-      "manifest": "./src/webparts/nwcTasksForms/NwcTasksFormsWebPart.manifest.json",
-      "outputPath": "./dist/nwc-tasks-forms-web-part.js"
+  "$schema": "https://developer.microsoft.com/json-schemas/spfx-build/config.2.0.schema.json",
+  "version": "2.0",
+  "bundles": {
+    "nwc-tasks-forms-web-part": {
+      "components": [
+        {
+          "entrypoint": "./lib/webparts/nwcTasksForms/NwcTasksFormsWebPart.js",
+          "manifest": "./src/webparts/nwcTasksForms/NwcTasksFormsWebPart.manifest.json"
+        }
+      ]
     }
-  ],
-  "externals": {},
+  },
   "localizedResources": {
-    "NwcTasksFormsWebPartStrings": "webparts/nwcTasksForms/loc/{locale}.js"
-  }
+    "NwcTasksFormsWebPartStrings": "lib/webparts/nwcTasksForms/loc/{locale}.js"
+  },
+  "externals": {}
 }
