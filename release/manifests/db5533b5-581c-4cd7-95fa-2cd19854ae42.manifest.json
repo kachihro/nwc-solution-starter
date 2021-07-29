@@ -35,7 +35,7 @@
     "scriptResources": {
       "nwc-tasks-forms-web-part": {
         "type": "path",
-        "path": "nwc-tasks-forms-web-part_3edbebe5368a88407014.js"
+        "path": "nwc-tasks-forms-web-part.js"
       },
       "@microsoft/sp-webpart-base": {
         "type": "component",
@@ -50,10 +50,10 @@
       "NwcTasksFormsWebPartStrings": {
         "type": "localizedPath",
         "paths": {
-          "en-AU": "NwcTasksFormsWebPartStrings_en-au_9f989e12cc6daeb4739083f168123c89.js",
-          "en-US": "NwcTasksFormsWebPartStrings_en-us_9f989e12cc6daeb4739083f168123c89.js"
+          "en-AU": "NwcTasksFormsWebPartStrings_en-au.js",
+          "en-US": "NwcTasksFormsWebPartStrings_en-us.js"
         },
-        "defaultPath": "NwcTasksFormsWebPartStrings_en-us_9f989e12cc6daeb4739083f168123c89.js"
+        "defaultPath": "NwcTasksFormsWebPartStrings_en-us.js"
       },
       "react-dom": {
         "type": "component",

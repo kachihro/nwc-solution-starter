@@ -86,6 +86,7 @@ var NwcTasksForms = /** @class */ (function (_super) {
             if (_this.props.filterWorkflows !== '') {
                 workflowFilters = _this.props.filterWorkflows.split(/\r?\n/);
             }
+            debugger;
             tasks.map(function (t) {
                 // check to see if there's a filter for workflows - if not, then just return
                 t.taskAssignments.forEach(function (ta) {

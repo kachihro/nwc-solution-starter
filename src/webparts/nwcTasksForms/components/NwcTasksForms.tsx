@@ -280,7 +280,7 @@ export default class NwcTasksForms extends React.Component<INwcTasksFormsProps, 
     if (this.props.filterWorkflows !== '') {
       workflowFilters = this.props.filterWorkflows.split(/\r?\n/);
     }
-
+    debugger;
     tasks.map(t => {
       // check to see if there's a filter for workflows - if not, then just return
       t.taskAssignments.forEach(ta => {
